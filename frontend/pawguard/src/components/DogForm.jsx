@@ -1,42 +1,68 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-export default function Navbar(){
+export default function DogForm({onSubmit}){
 
- const navigate = useNavigate();
+ const [name,setName] = useState("");
+ const [breed,setBreed] = useState("");
+ const [age,setAge] = useState("");
+ const [owner,setOwner] = useState("");
 
- const logout = () => {
+ const submitForm = () => {
 
-   localStorage.removeItem("user");
-   navigate("/");
+   if(!name || !breed || !age || !owner){
+     alert("Please fill all fields");
+     return;
+   }
+
+   onSubmit({
+     name,
+     breed,
+     age,
+     owner
+   });
+
+   setName("");
+   setBreed("");
+   setAge("");
+   setOwner("");
 
  };
 
  return(
 
-   <div style={styles.navbar}>
+   <div>
 
-     <h2>PawGuard</h2>
+     <input
+     placeholder="Dog Name"
+     value={name}
+     onChange={(e)=>setName(e.target.value)}
+     />
 
-     <div>
+     <input
+     placeholder="Breed"
+     value={breed}
+     onChange={(e)=>setBreed(e.target.value)}
+     />
 
-       <Link to="/dashboard">Dashboard</Link>{" "}
-       <Link to="/dogs">Dogs</Link>{" "}
-       <Link to="/health">Health Records</Link>{" "}
-       <button onClick={logout}>Logout</button>
+     <input
+     placeholder="Age"
+     type="number"
+     value={age}
+     onChange={(e)=>setAge(e.target.value)}
+     />
 
-     </div>
+     <input
+     placeholder="Owner"
+     value={owner}
+     onChange={(e)=>setOwner(e.target.value)}
+     />
+
+     <button onClick={submitForm}>
+       Add Dog
+     </button>
 
    </div>
 
  )
 
-}
-
-const styles = {
- navbar:{
-   display:"flex",
-   justifyContent:"space-between",
-   padding:"10px",
-   background:"#eee"
- }
 }

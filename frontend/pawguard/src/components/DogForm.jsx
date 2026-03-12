@@ -14,6 +14,15 @@ export default function DogForm({onSubmit}){
      return;
    }
 
+   if(age >= 20){
+    const confirmAge = confirm("Dogs usually live around 13 years. Are you sure the dog is 20+ years old?");
+    
+    if(!confirmAge){
+      return; // stop submission if user clicks Cancel
+    }
+  }
+
+
    onSubmit({
      name,
      breed,

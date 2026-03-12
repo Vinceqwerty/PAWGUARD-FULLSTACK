@@ -1,49 +1,23 @@
-Full-Stack Web Application Development (Group Project)
+<div align="center">
 
-This is a . Each group must develop a fully functional full-stack web application. You may reuse or improve the frontend from your Application Development PIT, but it must be properly integrated with a working backend and database.
-⚠️ I will check each member’s contribution in GitHub. Your commits and participation in the repository will be reviewed and graded individually.
-The system must simulate a real-world business application such as a POS System, Inventory Management System, Sales Monitoring System, Student Record System, or similar.
-Your system must include:
-A main Dashboard page
-Complete CRUD operations (Create, Read, Update, Delete)
-A working database with at least three related tables
-Proper frontend, backend, and database integration
-Form validation
-Organized folder structure
-Clean and readable code
-Responsive design
-A Login Logout functionality.
-Authentication and Authorization are optional.
-All data must be stored in the database and dynamically displayed in the system.
-You may use the React framework for the frontend and Django for the backend frameworks. The database may be a MySQL database system.
+# **PAWGUARD-FULLSTACK**
 
-Documentation Requirements
-System Title
-Group Members and Roles
-Project Description
-System Features
-Brief system explanation
+*Empowering Smarter Pet Care Through Seamless Innovation*
+
+[![last commit](https://img.shields.io/github/last-commit/Vinceqwerty/PAWGUARD-FULLSTACK?style=flat&logo=git&logoColor=white&color=0080ff)](https://github.com/Vinceqwerty/PAWGUARD-FULLSTACK)
+[![python](https://img.shields.io/github/languages/top/Vinceqwerty/PAWGUARD-FULLSTACK?style=flat&color=0080ff)](https://github.com/Vinceqwerty/PAWGUARD-FULLSTACK)
+[![languages](https://img.shields.io/github/languages/count/Vinceqwerty/PAWGUARD-FULLSTACK?style=flat&color=0080ff)](https://github.com/Vinceqwerty/PAWGUARD-FULLSTACK)
+
+*Built with the tools and technologies:*
+
+![JSON](https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black)
+![React](https://img.shields.io/badge/React-61DAFB.svg?style=flat&logo=React&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF.svg?style=flat&logo=Vite&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20.svg?style=flat&logo=Django&logoColor=white)
+![Django REST](https://img.shields.io/badge/Django%20REST-ff1709.svg?style=flat&logo=django&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1.svg?style=flat&logo=MySQL&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB.svg?style=flat&logo=Python&logoColor=white)
 
 
-Submission Requirements
-5–10 minute demo video (all members must speak)
-GitHub repository link with proper commit history
-Complete documentation
-
-
-Grading Criteria
-
-Functionality – 40%
-
-Code Structure and Organization – 20%
-
-Database Design – 15%
-
-User Interface – 15%
-
-Documentation & Presentation – 10%
-
-
-⚠️ I will also conduct an oral questioning during presentation to check if you truly understand the concepts and your own code. Your answers will affect your individual grade.
-
-Note: Only one member of each group will submit.
+</div>

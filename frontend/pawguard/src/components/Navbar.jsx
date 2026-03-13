@@ -1,7 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import "../styles/navbar.css";
+
 export default function Navbar(){
 
  const navigate = useNavigate();
+ const location = useLocation();
+
  const logout = () => {
 
   localStorage.removeItem("user");
@@ -10,25 +14,16 @@ export default function Navbar(){
 
  return(
 
-   <div style={styles.navbar}>
+   <div className="navbar">
      <h2>PawGuard</h2>
-     <div>
+     <div className="navbar-nav">
 
-       <Link to="/dashboard">Dashboard</Link>{" "}
-       <Link to="/dogs">Dogs</Link>{" "}
-       <Link to="/health">Health Records</Link>{" "}
+       <Link to="/dashboard" className={location.pathname === '/dashboard' ? 'active' : ''}>Dashboard</Link>
+       <Link to="/dogs" className={location.pathname === '/dogs' ? 'active' : ''}>Add Dogs</Link>
+       <Link to="/health" className={location.pathname === '/health' ? 'active' : ''}>Health Records</Link>
        <button onClick={logout}>Logout</button>
 
      </div>
    </div>
  )
-}
-
-const styles = {
- navbar:{
-   display:"flex",
-   justifyContent:"space-between",
-   padding:"10px",
-   background:"#eee"
- }
 }

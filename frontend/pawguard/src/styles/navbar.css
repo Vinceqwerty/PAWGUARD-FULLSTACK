@@ -1,0 +1,127 @@
+/* ========== ROOT VARIABLES ========== */
+:root {
+  --primary: #d63384;
+  --primary-dark: #c2185b;
+  --secondary: #e91e63;
+  --accent: #ff6b9d;
+
+  --text-light: #ffffff;
+  --text-dark: #1a1a2e;
+
+  --shadow: 0 4px 12px rgba(0,0,0,0.15);
+  --border-radius: 8px;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0 0 20px 20px;
+}
+
+/* BRAND TITLE */
+.navbar h2 {
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* NAV LINKS CONTAINER */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* NAV LINKS */
+.navbar-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-nav a.active {
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-nav a:active {
+  transform: translateY(0);
+}
+
+/* LOGOUT BUTTON */
+.navbar-nav button {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-nav button:active {
+  transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navbar h2 {
+    font-size: 1.3rem;
+  }
+
+  .navbar-nav {
+    gap: 12px;
+  }
+
+  .navbar-nav a,
+  .navbar-nav button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

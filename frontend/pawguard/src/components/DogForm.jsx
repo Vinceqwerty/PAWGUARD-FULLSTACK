@@ -39,7 +39,7 @@ export default function DogForm({onSubmit}){
 
  return(
 
-   <div>
+   <div className="dog-form">
 
      <input
      placeholder="Dog Name"

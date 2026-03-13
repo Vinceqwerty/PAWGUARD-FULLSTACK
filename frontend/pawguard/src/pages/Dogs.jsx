@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getDogs, addDog, deleteDog } from "../services/api";
 import Navbar from "../components/Navbar";
 import DogForm from "../components/DogForm";
+import "../styles/dogs.css";
 
 export default function Dogs(){
 
@@ -25,15 +26,13 @@ const addNewDog = async (dog) => {
 
 return(
 
-<div>
+<div className="dogs-page">
 
 <Navbar />
 
-<h2>Dogs</h2>
-
 <DogForm onSubmit={addNewDog} />
 
-<ul>
+<ul className="dog-list">
 
 {dogs.map(dog=>(
 <li key={dog.id}>

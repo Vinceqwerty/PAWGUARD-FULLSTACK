@@ -13,6 +13,14 @@ export const addDog = async (dog) => {
  });
 };
 
+export const updateDog = async (id, dog) => {
+  await fetch(`${API}/dogs/${id}/`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dog),
+  });
+};
+
 export const deleteDog = async (id) => {
  await fetch(`${API}/dogs/${id}/`, {
    method: "DELETE",

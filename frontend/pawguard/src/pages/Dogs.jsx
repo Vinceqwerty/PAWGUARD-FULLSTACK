@@ -1,55 +1,62 @@
 import { useEffect, useState } from "react";
-import { getDogs, addDog, deleteDog } from "../services/api";
+import { getDogs, addDog, deleteDog, updateDog } from "../services/api";
 import Navbar from "../components/Navbar";
 import DogForm from "../components/DogForm";
 import "../styles/dogs.css";
 
-export default function Dogs(){
+export default function Dogs() {
+  const [dogs, setDogs] = useState([]);
+  const [editingDog, setEditingDog] = useState(null);
 
-const [dogs,setDogs] = useState([]);
+  useEffect(() => {
+    fetchDogs();
+  }, []);
 
-useEffect(()=>{
+  const fetchDogs = () => {
+    getDogs().then((data) => setDogs(data));
+  };
 
- getDogs().then(data=>setDogs(data))
+  const addNewDog = async (dog) => {
+    await addDog(dog);
+    fetchDogs();
+  };
 
-},[])
+  const handleEditClick = (dog) => {
+    setEditingDog(dog);
+  };
 
-const addNewDog = async (dog) => {
+  const saveUpdatedDog = async (dogData) => {
+    if (!editingDog?.id) return;
+    await updateDog(editingDog.id, dogData);
+    setEditingDog(null);
+    fetchDogs();
+  };
 
- await addDog(dog);
+  const handleDelete = async (id) => {
+    await deleteDog(id);
+    fetchDogs();
+  };
 
- const updated = await getDogs();
+  return (
+    <div className="dogs-page">
+      <Navbar />
 
- setDogs(updated);
+      <DogForm 
+        onSubmit={editingDog ? saveUpdatedDog : addNewDog} 
+        initialData={editingDog} 
+      />
 
-};
-
-return(
-
-<div className="dogs-page">
-
-<Navbar />
-
-<DogForm onSubmit={addNewDog} />
-
-<ul className="dog-list">
-
-{dogs.map(dog=>(
-<li key={dog.id}>
-
-{dog.name} - {dog.breed}
-
-<button onClick={()=>deleteDog(dog.id)}>
-Delete
-</button>
-
-</li>
-))}
-
-</ul>
-
-</div>
-
-)
-
+      <ul className="dog-list">
+        {dogs.map((dog) => (
+          <li key={dog.id}>
+            {dog.name} - {dog.breed} - {dog.owner}
+            <div className="button-group">
+                <button onClick={() => handleEditClick(dog)}>Edit</button>
+                <button onClick={() => handleDelete(dog.id)}>Delete</button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

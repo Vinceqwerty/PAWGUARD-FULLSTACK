@@ -29,7 +29,14 @@
 
 /* TITLE */
 .healthrecords-page h2 {
-  color: var(--text-light);
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: none;
+}
+
+.healthrecords-page h3 {
+  color: #000000;
   font-size: 2rem;
   text-align: center;
   text-shadow: none;

@@ -9,7 +9,7 @@ export default function HealthRecords(){
 
      <Navbar />
 
-     <h2>Health Records</h2>
+     <h3>Health Records</h3>
 
      <div className="healthrecords-card">
 
